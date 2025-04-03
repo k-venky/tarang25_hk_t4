@@ -3,7 +3,8 @@ This website developed by
 ,N GOWTHAM
 ,A JEEVAN REDDY
 
-campuscaremint.netlify.app
+[web app link](https://campuscaremint.netlify.app)
+
 
 # MoodSight - Mental Wellness Companion 🧠✨
 
