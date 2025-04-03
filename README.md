@@ -21,11 +21,4 @@ A student-focused mental health app offering anonymous mood tracking, AI-powered
 - **Gradient Color Palette** representing emotional states
 - Adaptive UI theming based on mood selections
 
-```tsx
-// Example mood selection component
-<ColorSwatch
-  colorName="stress"
-  displayName="Overwhelmed"
-  onSelect={handleStressSelect}
-  isSelected={selectedMood === "stress"}
-/>
+
