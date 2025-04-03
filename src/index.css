@@ -1,0 +1,140 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 1.5rem;
+
+    /* Custom mood colors */
+    --mood-stress: #FF5555;
+    --mood-stress-end: #FFA07A;
+    
+    --mood-calm: #87CEEB;
+    --mood-calm-end: #E6E6FA;
+    
+    --mood-energy: #FFEB3B;
+    --mood-energy-end: #FFCC99;
+    
+    --mood-balance: #98FB98;
+    --mood-balance-end: #8FBC8F;
+    
+    --mood-drain: #36454F;
+    --mood-drain-end: #708090;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@font-face {
+  font-family: 'Comic Neue';
+  src: url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+  font-weight: 300 400 700;
+  font-style: normal;
+}
+
+@layer components {
+  .emoji-grid {
+    @apply grid grid-cols-3 gap-4 p-6 mx-auto max-w-md;
+  }
+  
+  .emoji-btn {
+    @apply flex items-center justify-center h-20 w-20 text-4xl rounded-full 
+           bg-white/80 shadow-md backdrop-blur-sm transition-all duration-300
+           hover:shadow-lg border-2 border-transparent;
+  }
+  
+  .emoji-btn.selected {
+    @apply border-2 border-primary animate-pulse-glow scale-110 shadow-lg;
+  }
+  
+  .color-swatch {
+    @apply h-16 w-full rounded-xl shadow-md transition-all duration-300
+           hover:shadow-lg cursor-pointer opacity-70 hover:opacity-90;
+  }
+  
+  .color-swatch.selected {
+    @apply border-2 border-white opacity-100 shadow-lg;
+  }
+  
+  .mood-card {
+    @apply p-5 rounded-2xl shadow-lg bg-white/80 backdrop-blur-sm min-h-[100px]
+           transition-all duration-300 flex flex-col justify-between animate-breathe cursor-pointer;
+  }
+  
+  .mood-card.selected {
+    @apply scale-105 shadow-xl;
+  }
+  
+  .exercise-card {
+    @apply p-4 rounded-xl shadow-md bg-white/90 backdrop-blur-sm
+           transition-all duration-300 hover:shadow-lg cursor-pointer;
+  }
+  
+  .panic-button {
+    @apply fixed top-4 right-4 bg-destructive text-destructive-foreground
+           h-12 w-12 rounded-full flex items-center justify-center
+           shadow-lg z-50 animate-pulse-glow;
+  }
+  
+  .mood-insight-card {
+    @apply p-6 rounded-2xl shadow-md bg-white/80 backdrop-blur-sm m-4
+           transition-all duration-300 animate-breathe cursor-pointer
+           border border-transparent hover:shadow-lg hover:border-primary/20;
+  }
+  
+  .expandable-card {
+    @apply overflow-hidden transition-all duration-300 ease-in-out;
+  }
+  
+  .nav-item {
+    @apply flex flex-col items-center justify-center p-2 rounded-lg
+           transition-all duration-300 hover:bg-accent;
+  }
+  
+  .nav-item.active {
+    @apply bg-accent text-accent-foreground;
+  }
+}
+
+.gradient-animated-bg {
+  background-size: 200% 200%;
+  animation: gradient-flow 3s ease infinite;
+}
